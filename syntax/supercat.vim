@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language:     Supercat
 " Maintainer:   Gnosis Ouroubouros <vim.20.noos@spamgourmet.com>
-" Version Info: 1.0
+" Version Info: 1.1
 " Last Change:  2009-06-14
 
 " For version 5.x: Clear all syntax items
@@ -41,20 +41,20 @@ syn match supercatWhi         "^.\{21}whi"hs=e-2,he=e contained contains=@superc
 syn match supercatYel         "^.\{21}yel"hs=e-2,he=e contained contains=@supercatHtmlColors
 
 " Attributes
-syn match supercatBlink       "^.\{25}k"hs=e   contained contains=@supercatColors,@supercatHtmlColors
-syn match supercatBold        "^.\{25}b"hs=e   contained contains=@supercatColors,@supercatHtmlColors
-syn match supercatNormal      "^.\{25}-"hs=e   contained contains=@supercatColors,@supercatHtmlColors
-syn match supercatReverse     "^.\{25}r"hs=e   contained contains=@supercatColors,@supercatHtmlColors
-syn match supercatUnderline   "^.\{25}u"hs=e   contained contains=@supercatColors,@supercatHtmlColors
+syn match supercatBlink       "^.\{25}k"hs=e,he=e     contained contains=@supercatColors,@supercatHtmlColors
+syn match supercatBold        "^.\{25}b"hs=e,he=e     contained contains=@supercatColors,@supercatHtmlColors
+syn match supercatNormal      "^.\{25}-"hs=e,he=e     contained contains=@supercatColors,@supercatHtmlColors
+syn match supercatReverse     "^.\{25}r"hs=e,he=e     contained contains=@supercatColors,@supercatHtmlColors
+syn match supercatUnderline   "^.\{25}u"hs=e,he=e     contained contains=@supercatColors,@supercatHtmlColors
 
 " Number of matches
-syn match supercatNumMatches  "^.\{27}\d"  contained contains=@supercatAttributes,@supercatColors,@supercatHtmlColors
+syn match supercatNumMatches  "^.\{27}\d"hs=e,he=e  contained contains=@supercatAttributes,@supercatColors,@supercatHtmlColors
 
 " Types
-syn match supercatCharsType   "^.\{29}c"   contained contains=supercatNumMatches,@supercatAttributes,@supercatColors,@supercatHtmlColors
-syn match supercatRegexType   "^.\{29}r"   contained contains=supercatNumMatches,@supercatAttributes,@supercatColors,@supercatHtmlColors
-syn match supercatStringType  "^.\{29}s"   contained contains=supercatNumMatches,@supercatAttributes,@supercatColors,@supercatHtmlColors
-syn match supercatTimeType    "^.\{29}t"   contained contains=supercatNumMatches,@supercatAttributes,@supercatColors,@supercatHtmlColors
+syn match supercatCharsType   "^.\{29}c"hs=e,he=e   contained contains=supercatNumMatches,@supercatAttributes,@supercatColors,@supercatHtmlColors
+syn match supercatRegexType   "^.\{29}r"hs=e,he=e   contained contains=supercatNumMatches,@supercatAttributes,@supercatColors,@supercatHtmlColors
+syn match supercatStringType  "^.\{29}s"hs=e,he=e   contained contains=supercatNumMatches,@supercatAttributes,@supercatColors,@supercatHtmlColors
+syn match supercatTimeType    "^.\{29}t"hs=e,he=e   contained contains=supercatNumMatches,@supercatAttributes,@supercatColors,@supercatHtmlColors
 
 " Regexes
 syn match   supercatRegexBackslash "\\"    contained
@@ -69,7 +69,7 @@ syn region  supercatRegexCurly     start="{"  skip="\\{"  end="}"  contained one
 syn region  supercatRegexClass     start="\[" skip="\\\]" end="\]" contained contains=@supercatRegexes oneline
 syn region  supercatRegexGroup     start="("  skip="\\)"  end=")"  contained contains=@supercatRegexes oneline
 
-syn match supercatRegex       "^.\{31}.*" contains=@supercatHtmlColors,@supercatColors,@supercatAttributes,supercatNumMatches,@supercatRegexes,@supercatTypes
+syn match supercatRegex       "^.\{31}.*"hs=s+31 contains=@supercatHtmlColors,@supercatColors,@supercatAttributes,supercatNumMatches,@supercatRegexes,@supercatTypes
 
 " Comments
 syn match supercatComment     "^\s*#.*"
